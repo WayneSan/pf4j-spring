@@ -29,7 +29,7 @@ public class Boot {
 
     public static void main(String[] args) {
         // print logo
-        printLogo();
+        printLogo("PF4J-SPRING-DEMO");
 
         // retrieves the spring application context
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
@@ -48,9 +48,9 @@ public class Boot {
         pluginManager.stopPlugins();
     }
 
-    private static void printLogo() {
+    private static void printLogo(String name) {
         System.out.println(StringUtils.repeat("#", 40));
-        System.out.println(StringUtils.center("PF4J-SPRING", 40));
+        System.out.printf("##%s##\n", StringUtils.center(name, 36));
         System.out.println(StringUtils.repeat("#", 40));
     }
 
